@@ -1,0 +1,275 @@
+/**
+ * styles/Dashboard.module.css
+ *
+ * Scoped styles for pages/dashboard.tsx.
+ *
+ * Layout: full-height flex column (navbar + scrollable main).
+ * The design is intentionally minimal — extend to match your product UI.
+ */
+
+/* ── Full-page layout ────────────────────────────────────────────────────── */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f9fafb;
+}
+
+/* ── Loading state ───────────────────────────────────────────────────────── */
+
+.loadingContainer {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingText {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* ── Navbar ──────────────────────────────────────────────────────────────── */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 60px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #6366f1;
+  letter-spacing: -0.02em;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e5e7eb;
+}
+
+.userName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  /* Hide on very small screens */
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .userName {
+    display: block;
+  }
+}
+
+.signOutButton {
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.signOutButton:hover {
+  border-color: #9ca3af;
+  color: #374151;
+}
+
+.signOutButton:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* ── Main content area ───────────────────────────────────────────────────── */
+
+.main {
+  flex: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Welcome card ────────────────────────────────────────────────────────── */
+
+.welcomeCard {
+  background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.welcomeTitle {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.welcomeSub {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* ── Info grid ───────────────────────────────────────────────────────────── */
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Info card ───────────────────────────────────────────────────────────── */
+
+.infoCard {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.adminCard {
+  border-color: #a5b4fc;
+  background: #fafafe;
+}
+
+.infoCardTitle {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.infoCardBody {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ── Definition list ─────────────────────────────────────────────────────── */
+
+.definitionList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.definitionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.definitionRow dt {
+  color: #6b7280;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.definitionRow dd {
+  margin: 0;
+  color: #111827;
+  font-weight: 400;
+  text-align: right;
+  word-break: break-all;
+}
+
+.definitionRow code {
+  font-family: monospace;
+  font-size: 0.8rem;
+  background: #f3f4f6;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* ── Role badge ──────────────────────────────────────────────────────────── */
+
+.roleBadge {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.roleBadge[data-role="admin"] {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* ── Admin link ──────────────────────────────────────────────────────────── */
+
+.adminLink {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6366f1;
+  text-decoration: none;
+}
+
+.adminLink:hover {
+  text-decoration: underline;
+}
+
+/* ── Dev panel ───────────────────────────────────────────────────────────── */
+
+.devPanel {
+  background: #1e1e2e;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+}
+
+.devPanelTitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #cdd6f4;
+}
+
+.jsonPre {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #a6e3a1;
+  font-family: "Fira Code", "Cascadia Code", "Consolas", monospace;
+  overflow-x: auto;
+  white-space: pre;
+  line-height: 1.6;
+}
