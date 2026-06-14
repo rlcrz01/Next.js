@@ -1,0 +1,69 @@
+/**
+ * styles/globals.css
+ *
+ * Global styles applied to every page via pages/_app.tsx.
+ * Keeps the base reset and typography consistent across the app.
+ */
+
+/* ── Box model reset ─────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ── Base document ───────────────────────────────────────────────────────── */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111827;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Anchors ─────────────────────────────────────────────────────────────── */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Accessible focus ring ───────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* ── Images ──────────────────────────────────────────────────────────────── */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Smooth scrolling ────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

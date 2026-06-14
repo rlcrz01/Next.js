@@ -1,0 +1,196 @@
+/**
+ * styles/Home.module.css
+ *
+ * Scoped styles for pages/index.tsx.
+ * Updated from the original template to include auth-related UI elements.
+ */
+
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.footer a {
+  color: #6366f1;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.title a {
+  color: #6366f1;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.description {
+  margin: 1.5rem 0 2.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #374151;
+  max-width: 560px;
+}
+
+/* ── Auth section ────────────────────────────────────────────────────────── */
+
+.authSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  min-height: 90px; /* prevent layout shift while session loads */
+}
+
+.authLoading {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.authPrompt {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4b5563;
+  text-align: center;
+}
+
+.authButtonRow {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.authButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.75rem;
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.authButton:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.authButton:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 3px;
+}
+
+.authButtonOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.75rem;
+  background: transparent;
+  color: #6b7280;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.authButtonOutline:hover {
+  border-color: #9ca3af;
+  color: #374151;
+}
+
+.authButtonOutline:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 3px;
+}
+
+/* ── Feature grid ────────────────────────────────────────────────────────── */
+
+.grid {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  gap: 1rem;
+}
+
+.card {
+  margin: 0;
+  padding: 1.5rem;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  flex: 1 1 200px;
+  max-width: 300px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.1s ease;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  border-color: #6366f1;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
+  transform: translateY(-2px);
+}
+
+.card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #6b7280;
+}

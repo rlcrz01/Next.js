@@ -1,0 +1,227 @@
+/**
+ * styles/Auth.module.css
+ *
+ * Scoped styles for the authentication pages:
+ *  • pages/auth/signin.tsx
+ *  • pages/auth/error.tsx
+ *
+ * Design goals:
+ *  - Centred card layout that works at all viewport sizes.
+ *  - Clear visual hierarchy: title → subtitle → action.
+ *  - Accessible focus rings and colour-contrast ratios.
+ *  - Minimal dependencies — pure CSS, no utility framework.
+ */
+
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f0f4ff 0%, #fafafa 100%);
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+
+.header {
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 0.4rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* ── Error banner ────────────────────────────────────────────────────────── */
+
+.errorBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 8px;
+  padding: 0.875rem 1rem;
+  font-size: 0.875rem;
+  color: #9f1239;
+  line-height: 1.5;
+}
+
+.errorIcon {
+  flex-shrink: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Large centred icon used on the error page */
+.errorIconLarge {
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+/* ── Provider list ───────────────────────────────────────────────────────── */
+
+.providerList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.providerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.providerButton:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.providerButton:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.providerIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ── Footer text ─────────────────────────────────────────────────────────── */
+
+.footer {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.link {
+  color: #6366f1;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ── Action row (error page) ─────────────────────────────────────────────── */
+
+.actionRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 360px) {
+  .actionRow {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.5rem;
+  background: #6366f1;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.primaryButton:hover {
+  background: #4f46e5;
+}
+
+.primaryButton:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.ghostButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.5rem;
+  background: transparent;
+  color: #6b7280;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.ghostButton:hover {
+  border-color: #9ca3af;
+  color: #374151;
+}
+
+.ghostButton:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* ── Dev-only debug code ─────────────────────────────────────────────────── */
+
+.debugCode {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.debugCode code {
+  background: #f3f4f6;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
